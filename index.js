@@ -6,8 +6,6 @@ function start() {
   content.searchTerm = askAndReturnSearchTerm()
   content.prefix = askAndReturnPrefix()
 
-  content.searchTerm = askAndReturnSearchTerm()
-
   function askAndReturnSearchTerm() {
     return readline.question('TYPE SEARCH TERM: ')
   }
@@ -15,8 +13,9 @@ function start() {
   function askAndReturnPrefix() {
     const prefixes = ['WHO IS', 'WHAT IS', 'THE HISTORY OF']
     const selectedPrefixIndex = readline.keyInSelect(prefixes, 'CHOOSE ONE OPTION: ')
+    const selectedPrefixText = prefixes[selectedPrefixIndex]
 
-    console.log(selectedPrefixIndex)
+    return selectedPrefixText
   }
 
   console.log(content)
