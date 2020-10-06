@@ -1,0 +1,19 @@
+{
+  "name": "sbw",
+  "version": "1.0.0",
+  "description": "Robô que faz pesquisas na Wikipedia",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoaoPedroLuz/SBW.git"
+  },
+  "author": "João Pedro Luz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JoaoPedroLuz/SBW/issues"
+  },
+  "homepage": "https://github.com/JoaoPedroLuz/SBW#readme"
+}
