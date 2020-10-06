@@ -4,6 +4,9 @@ function start() {
   const content = {}
 
   content.searchTerm = askAndReturnSearchTerm()
+  content.prefix = askAndReturnPrefix()
+
+  content.searchTerm = askAndReturnSearchTerm()
 
   function askAndReturnSearchTerm() {
     return readline.question('TYPE SEARCH TERM: ')
