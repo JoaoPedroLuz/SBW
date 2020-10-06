@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/JoaoPedroLuz/SBW/issues"
   },
-  "homepage": "https://github.com/JoaoPedroLuz/SBW#readme"
+  "homepage": "https://github.com/JoaoPedroLuz/SBW#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
