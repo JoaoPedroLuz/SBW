@@ -3,7 +3,7 @@ const algorithmiaApiKey = require('../credentials/algorithmia.json').apiKey
 
 async function robot(content) {
   await fetchContentFromWikipedia(content)
-  // sanitizeContent(content)
+  sanitizeContent(content)
   // breakContentIntoSentences(content)
 
   async function fetchContentFromWikipedia(content) {
@@ -13,6 +13,30 @@ async function robot(content) {
     const wikipediaContent = wikipediaResponse.get()
     
     content.sourceContentOriginal = wikipediaContent.content
+  }
+
+  function sanitizeContent(content) {
+    const withoutBlankLinesAndMarkdown = removeBlankLinesAndMarkdown(content.sourceContentOriginal)
+    const withourDatesInParentheses = removeDatesInParentheses(withoutBlankLinesAndMarkdown)
+    console.log(withourDatesInParentheses)
+
+    function removeBlankLinesAndMarkdown(text) {
+      const allLines = text.split('\n')
+      
+      const withoutBlankLinesAndMarkdown = allLines.filter((line) => {
+        if (line.trim().length === 0 || line.trim().startsWith('=')) {
+          return false
+        }
+
+        return true
+      })
+
+      return withoutBlankLinesAndMarkdown.join(' ')
+    }
+  } 
+
+  function removeDatesInParentheses(text) {
+    return text.replace(/\((?:\([^()]*\)|[^()])*\)/gm, '').replace(/  /g,' ')
   }
 }
 
